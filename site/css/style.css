@@ -27,6 +27,12 @@ body{
     font-weight: 500;
 }
 
+.login label{
+    text-transform: uppercase;
+    color: #930000;
+    size: 3px;
+}
+
 .login img{
     margin: 3px;
 }
