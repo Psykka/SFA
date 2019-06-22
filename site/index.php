@@ -21,15 +21,15 @@
 
             $result = mysqli_query($db, $query);
 
-            $row = mysqli_fetch_array($result);
-            $active = $row['active'];
-            
+            if($result){
+                $row = mysqli_fetch_array($result);
+                $active = $row['active'];
+            }
+
             $count = mysqli_num_rows($result);
-                
+            
             if($count == 1) {
-                session_register("username");
                 $_SESSION['login_user'] = $username;
-                
                 header("location: menu.php");
             }else {
                 $loginerror = "O nome de usuario ou senha estão incorretos";
