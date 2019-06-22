@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-        require_once("CMS.php");
+        require_once("php/CMS.php");
         $cms = new CMS();      
         $db = $cms->conectar();
 
