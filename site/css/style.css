@@ -1,0 +1,75 @@
+body{
+    background-color: #FFD2A4;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    LOGIN SRC
+*/
+
+.login{
+    width: 350px;
+    padding: 30px;
+    background-color: #FF8300;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.login h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.login img{
+    margin: 3px;
+}
+
+.login input::-webkit-input-placeholder{
+    color: #A75600
+}
+
+.login input[type = "text"], .login input[type = "password"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #A75600;
+    padding: 14px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+.login input[type = "text"]:focus, .login input[type = "password"]:focus{
+    width: 220px;
+    border-color: #D96F00
+}
+
+.login input[type = "submit"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #FFB970;
+    padding: 14px;
+    width: 100px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.login input[type = "submit"]:hover{
+    background-color: #FFB970;
+    color: #A75600;
+}
