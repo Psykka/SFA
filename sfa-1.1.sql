@@ -2,7 +2,7 @@ create database SFA;
 
 use SFA;
 
-create table usuarios(
+create table usuario(
 	idUser int(10) unsigned not null auto_increment,
     username varchar(255) not null,
     passwd varchar(255) default null,
