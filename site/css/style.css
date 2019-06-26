@@ -1,5 +1,5 @@
 body{
-    background-color: #FFD2A4;
+    background-color: #FF8300;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body{
 .login{
     width: 350px;
     padding: 30px;
-    background-color: #FF8300;
+    background-color: #FFF;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -22,7 +22,7 @@ body{
 }
 
 .login h1{
-    color: white;
+    color: black;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -50,7 +50,7 @@ body{
     padding: 14px;
     width: 200px;
     outline: none;
-    color: white;
+    color: black;
     border-radius: 20px;
     transition: 0.25s;
 }
@@ -69,7 +69,7 @@ body{
     padding: 14px;
     width: 100px;
     outline: none;
-    color: white;
+    color: #D96F00;
     border-radius: 20px;
     transition: 0.25s;
     cursor: pointer;

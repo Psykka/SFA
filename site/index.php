@@ -39,7 +39,7 @@
 
     <div class="login">
     <h1>login</h1>
-    <img src="https://via.placeholder.com/250x50/FF0000?text=LOGO">
+    <img src="assets/Logo.png" width="300px">
         <form action="" method="post">
             <input type="text" name="user" placeholder="User">
             <input type="password" name="pass" placeholder=Password>
