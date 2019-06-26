@@ -22,7 +22,7 @@ body{
 }
 
 .login h1{
-    color: black;
+    color: #A75600;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -50,7 +50,7 @@ body{
     padding: 14px;
     width: 200px;
     outline: none;
-    color: black;
+    color: #000000;
     border-radius: 20px;
     transition: 0.25s;
 }
@@ -78,4 +78,17 @@ body{
 .login input[type = "submit"]:hover{
     background-color: #FFB970;
     color: #A75600;
+}
+
+.container{
+    background-color: #FFF;
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    margin: auto;
+    padding: 20px
 }
