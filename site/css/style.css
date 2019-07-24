@@ -92,3 +92,15 @@ body{
     margin: auto;
     padding: 20px
 }
+
+/*
+    MENU
+*/
+
+.item-menu {
+    background-color: #FF8300;
+    width: 48%;
+    height: 100px;
+    margin: 5px;
+    display: inline-block;
+}
