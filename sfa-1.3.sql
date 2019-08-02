@@ -25,11 +25,16 @@ create table horario(
 
 create table funcionario(
 	idFunc int(10) unsigned not null auto_increment,
-    idHorario int(10) unsigned not null,
-    nome varchar (255) not null,
 	idCargo int(10) unsigned not null,
+    nome varchar (255) not null,
     primary key (idFunc),
-    foreign key (idCargo) references cargo(idCargo),
+    foreign key (idCargo) references cargo(idCargo)
+);
+
+create table HorarioFuncinarios(
+	idFunc int(10) unsigned not null,
+    idHorario int(10) unsigned not null,
+	foreign key (idFunc) references funcionario(idFunc),
     foreign key (idHorario) references horario(idHorario)
 );
 
@@ -41,8 +46,8 @@ create table motivo(
 
 create table condicao(
 	idCondicao int(10) unsigned not null auto_increment,
-    condicao varchar(255) not null,
     idMotivo int(10) unsigned default null, /* Motivo da falta se o funcionario faltou */
+    condicao varchar(255) not null,
     foreign key (idMotivo) references motivo(idMotivo),
     primary key (idCondicao)
 );
@@ -51,12 +56,10 @@ create table frequencia(
 	idFrequencia int(10) unsigned not null auto_increment,
     idFunc int(10) unsigned not null,
     idCondicao int(10) unsigned not null,
+    idHorario int(10) unsigned not null,
     dia date not null,
-    FreqIni time not null,
-    FreqFin time not null,
     foreign key (idFunc) references funcionario(idFunc),
     foreign key (idCondicao) references condicao(idCondicao),
+    foreign key (idHorario) references horario(idHorario),
     primary key (idFrequencia)
 );
-
-
