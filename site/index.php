@@ -8,7 +8,7 @@
 <body>
 <?php
         require_once("php/CMS.php");
-        $cms = new CMS();      
+        $cms = new CMS();
         $db = $cms->conectar();
 
         session_start();

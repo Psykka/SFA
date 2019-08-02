@@ -5,6 +5,17 @@ body{
     padding: 0;
 }
 
+.container{
+    background-color: #FFF;
+    position: absolute;
+    width: 95%;
+    height: 88%;
+    min-height: fit-content;
+    border-radius: 20px;
+    padding: 1.2%;
+    margin: 1%;
+}
+
 /*
     LOGIN SRC
 */
@@ -80,27 +91,55 @@ body{
     color: #A75600;
 }
 
-.container{
-    background-color: #FFF;
-    position: absolute;
-    width: 95%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    margin: auto;
-    padding: 20px
-}
-
 /*
     MENU
 */
 
-.item-menu {
+.item-menu{
     background-color: #FF8300;
     width: 48%;
     height: 100px;
     margin: 5px;
     display: inline-block;
+}
+
+.days {
+    width: fit-content;
+    border: 1px solid #000000;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+    margin-top: 30px;
+}
+
+.days table{
+    border-collapse: collapse;
+    border: 0;
+}
+  
+.days table, th, td {
+    padding: 10px;
+}
+
+.day .funcionario, th{
+    background-color: #FF8300;
+}
+
+.days table, tr {
+    background-color: #FFF;
+}
+
+.days table, tr:nth-child(2n+3){
+    background-color: #ededed;
+}
+
+.days table, tr:hover{
+    background-color: #FFB970;
+    transition: 0.25s;
+}
+
+.days table, td:hover{
+    background-color: #D96F00;
+    transition: 0.25s;
 }
