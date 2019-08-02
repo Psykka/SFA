@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
     <title>SFA | Login</title>
 </head>
 <body>
@@ -39,7 +40,7 @@
 
     <div class="login">
     <h1>login</h1>
-    <img src="assets/Logo.png" width="300px">
+    <img src="assets/Logo1.png" width="300px">
         <form action="" method="post">
             <input type="text" name="user" placeholder="User">
             <input type="password" name="pass" placeholder=Password>

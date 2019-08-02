@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
     <title>SFA | Menu</title>
 </head>
 <body>
