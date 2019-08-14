@@ -17,8 +17,8 @@
     ?>
 
     <div class="container">
-        <a href="cadastro.php"><div class="item-menu">Novo Cadastro</div></a>
-        <a href="funcionarios"><div class="item-menu">Funcionarios</div></a>
+        <a href="cadastro.php"><div class="item-menu"><div class="item-menu-inside"> Novo Cadastro</div></div></a>
+        <a href="funcionarios"><div class="item-menu"><div class="item-menu-inside">Funcionários</div></div></a>
 
         <div class="days">
             <table>

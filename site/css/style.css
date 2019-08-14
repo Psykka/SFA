@@ -101,6 +101,29 @@ body{
     height: 100px;
     margin: 5px;
     display: inline-block;
+	border-radius: 20px;
+	text-align:center;
+
+}
+
+.item-menu-inside{
+margin-top: 5%;
+}
+
+.item-menu-inside, a:link{
+	color: #00000;
+	font-size: 25px;
+}
+
+.item-menu-inside, a:visited{
+	color: #00000;
+	font-size: 25px;
+}
+
+.item-menu:hover{
+	background-color:#FFB970;
+	transition:0.25;
+	color: #00000;
 }
 
 .days {
