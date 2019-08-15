@@ -8,9 +8,26 @@
 </head>
 <body>
     <?php
+        require_once("php/CMS.php");
+        $cms = new CMS();
+        $db = $cms->conectar();
+    
+        session_start();
+
+        if(!isset($_SESSION['login_user'])){
+            header("location:sessao.php");
+            die();
+        }
     ?>
     <div class="container">
-
+        <div class="cadastro">
+            <form action="" method="get">
+                <label>Cargo:</label><input type="number" name="">
+                <label>Nome:</label><input type="text" name="">
+                <label>RG:</label><input type="text" name="">
+                <input type="submit" value="CADASTRAR">
+            </form>
+        </div>
     </div>
 </body>
 </html>

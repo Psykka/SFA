@@ -7,7 +7,7 @@
     <title>SFA | Login</title>
 </head>
 <body>
-<?php
+    <?php
         require_once("php/CMS.php");
         $cms = new CMS();
         $db = $cms->conectar();
