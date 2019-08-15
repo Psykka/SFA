@@ -96,37 +96,42 @@ body{
 */
 
 .item-menu{
+    display: inline-block;
     background-color: #FF8300;
     width: 48%;
-    height: 100px;
+    height: 90px;
     margin: 5px;
-    display: inline-block;
-	border-radius: 20px;
-	text-align:center;
-
+    border-radius: 5px;
+    padding: 5px;
 }
 
-.item-menu-inside{
-margin-top: 5%;
-}
-
-.item-menu-inside, a:link{
-	color: #00000;
-	font-size: 25px;
-}
-
-.item-menu-inside, a:visited{
-	color: #00000;
-	font-size: 25px;
+.item-menu img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .item-menu:hover{
 	background-color:#FFB970;
-	transition:0.25;
-	color: #00000;
+    color: #000000;
+    transition: 0.25s;
 }
 
-.days {
+.item-menu, a{
+    text-decoration: none;
+    text-align: center;
+}
+
+.item-menu, a:visited{
+	color: #000000;
+}
+
+.item-menu label{
+    margin-right: auto;
+    font-size: 25px;
+}
+
+.days{
     width: fit-content;
     border: 1px solid #000000;
     position: relative;
@@ -141,7 +146,7 @@ margin-top: 5%;
     border: 0;
 }
   
-.days table, th, td {
+.days table, th, td{
     padding: 10px;
 }
 
