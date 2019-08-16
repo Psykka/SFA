@@ -32,7 +32,7 @@
 
         <div class="days">
             <table>
-                <tr>
+                <tr class="funcionario">
                     <th></th>
                     <th colspan="2">Segunda</th>
                     <th colspan="2">Terça</th>
@@ -61,9 +61,6 @@
                     <!--Funcionario--><td>Mauro</td>
                     <!--Segunda--><td>11:40</td><td>13:30</td>
                     <!--Terça--><td>11:40</td><td>13:30</td>
-                    <!--Quarta--><td>11:40</td><td>13:30</td>
-                    <!--Quinta--><td>11:40</td><td>13:30</td>
-                    <!--Sexta--><td>11:40</td><td>13:30</td>
                 </tr>
             </table>
         </div>

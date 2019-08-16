@@ -146,28 +146,32 @@ body{
     border: 0;
 }
   
-.days table, th, td{
+.days td{
     padding: 10px;
 }
 
-.day .funcionario, th{
+.days th{
+    padding: 10px;
+}
+
+.funcionario th{
     background-color: #FF8300;
 }
 
-.days table, tr {
+.days tr {
     background-color: #FFF;
 }
 
-.days table, tr:nth-child(2n+3){
+.days tr:nth-child(2n+3){
     background-color: #ededed;
 }
 
-.days table, tr:hover{
+.days table tr:hover{
     background-color: #FFB970;
     transition: 0.25s;
 }
 
-.days table, td:hover{
+.days table td:hover{
     background-color: #D96F00;
     transition: 0.25s;
 }
