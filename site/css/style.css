@@ -146,11 +146,7 @@ body{
     border: 0;
 }
   
-.days td{
-    padding: 10px;
-}
-
-.days th{
+.days td, .days th{
     padding: 10px;
 }
 
