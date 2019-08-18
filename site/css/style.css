@@ -8,12 +8,34 @@ body{
 .container{
     background-color: #FFF;
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 95%;
-    height: 88%;
+    transform: translate(-50%, -50%);
+    height: 80%;
     min-height: fit-content;
     border-radius: 5px;
     padding: 1.5%;
-    margin: 1%;
+    margin-top: 30px;
+}
+
+header label{
+    margin-left: 10px;
+}
+
+header .title{
+    text-align: center;
+}
+
+header img{
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+header .logout{
+    float: right;
+    margin-right: 15px;
 }
 
 /*
@@ -109,6 +131,7 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 60%;
 }
 
 .item-menu:hover{
@@ -170,4 +193,44 @@ body{
 .days table td:hover{
     background-color: #D96F00;
     transition: 0.25s;
+}
+
+/*
+    sesson
+*/
+
+.sesson{
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.sesson img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sesson button{
+    background: none;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    border: 3px solid #FFB970;
+    padding: 14px;
+    width: 200px;
+    outline: none;
+    color: #D96F00;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.sesson button:hover{
+    background-color: #FFB970;
+    color: #A75600;
 }

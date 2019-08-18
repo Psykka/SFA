@@ -18,7 +18,20 @@
             header("location:sessao.php");
             die();
         }
+
+        if(isset($_GET['logout']) == true){
+            session_destroy();
+            header("Location: index.php");
+            die();
+        }
     ?>
+
+    <header>
+        <a href="menu.php"><img src="./assets/back.png"></a>
+        <label>Voltar</label>
+        <a href="menu.php?logout=true"><img src="./assets/logout.png" class="logout"></a>
+    </header>
+    
     <div class="container">
         <div class="cadastro">
             <form action="" method="get">

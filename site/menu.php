@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <title>SFA | Menu</title>
 </head>
 <body>
@@ -11,22 +12,34 @@
         session_start();
 
         if(!isset($_SESSION['login_user'])){
-            header("location:sessao.php");
+            header("location: sessao.php");
+            die();
+        }
+
+        if(isset($_GET['logout']) == true){
+            session_destroy();
+            header("Location: index.php");
             die();
         }
     ?>
 
+    <header>
+        <img src="./assets/user.png">
+        <label>Bem vindo, <?php echo $_SESSION['login_user'] ?></label>
+        <a href="menu.php?logout=true"><img src="./assets/logout.png" class="logout"></a>
+    </header>
+    
     <div class="container">
         <a href="cadastro.php">
             <div class="item-menu">
                 <label>Novo Cadastro</label>
-                <img src="./assets/cadastro.png" height="50px">
+                <img src="./assets/cadastro.png">
             </div>
         </a>
         <a href="funcionarios.php">
             <div class="item-menu">
                 <label>Funcionários</label>
-                <img src="./assets/funcionarios.png" height="50px">
+                <img src="./assets/funcionarios.png">
             </div>
         </a>
 

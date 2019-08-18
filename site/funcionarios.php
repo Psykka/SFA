@@ -29,7 +29,18 @@
             $rows[] = $i;
         }
 
+        if(isset($_GET['logout']) == true){
+            session_destroy();
+            header("Location: index.php");
+            die();
+        }
     ?>
+    
+    <header>
+        <a href="menu.php"><img src="./assets/back.png"></a>
+        <label>Voltar</label>
+        <a href="menu.php?logout=true"><img src="./assets/logout.png" class="logout"></a>
+    </header>
 
     <div class="container">
         <label>Nome:</label><input type="text" id="nome" onkeyup="rowSearch(funcionarios, 'nome', 'search');">
