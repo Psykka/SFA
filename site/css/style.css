@@ -21,6 +21,8 @@ body{
 
 header label{
     margin-left: 10px;
+	font-size:30px;
+    font-weight:bold;
 }
 
 header .title{
@@ -231,6 +233,76 @@ header .logout{
 }
 
 .sesson button:hover{
+    background-color: #FFB970;
+    color: #A75600;
+}
+
+.cadastro{
+    padding: 30px;
+    background-color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.cadastro h1{
+    color: #A75600;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.cadastro label{
+    text-transform: uppercase;
+    color: #930000;
+    size: 3px;
+}
+
+.cadastro img{
+    margin: 3px;
+}
+
+.cadastro input::-webkit-input-placeholder{
+    color: #A75600
+}
+
+.cadastro input[type = "text"], .cadastro input[type = "password"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #A75600;
+    padding: 14px;
+    width: 400px;
+    outline: none;
+    color: #000000;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+.cadastro input[type = "text"]:focus, .cadastro input[type = "password"]:focus{
+    width: 420px;
+    border-color: #D96F00
+}
+
+.cadastro input[type = "submit"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #FFB970;
+    padding: 14px;
+    width: 200px;
+    outline: none;
+    color: #D96F00;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.cadastro input[type = "submit"]:hover{
     background-color: #FFB970;
     color: #A75600;
 }
