@@ -11,10 +11,17 @@ function rowSearch(funcionarios, inputId, divId){
         let list = ""
 
         query.forEach(funcionario => {
-            list = list + `<tr><td>${ funcionario.id }</td><td>${ funcionario.nome }</td></tr>`;
+            list = list + `<tr>
+                                <td>${ funcionario.id }</td>
+                                <td>${ funcionario.nome }</td>
+                                <td>
+                                    <a href="funcionarios.php?funcId=${ funcionario.id }">Editar</a>
+                                </td>
+                            </tr>`;
         });
 
         result = `<table>${ list }</table>`
+        
     }
 
     return document.getElementById(divId).innerHTML = result;
