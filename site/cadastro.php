@@ -28,19 +28,21 @@
 
     <header>
         <a href="menu.php"><img src="./assets/back.png"></a>
-        <label>Voltar</label>
+           <label>Voltar</label>
         <a href="menu.php?logout=true"><img src="./assets/logout.png" class="logout"></a>
     </header>
-    
-    <div class="container">
-        <div class="cadastro">
-            <form action="" method="get">
-                <label>Cargo:</label><input type="number" name="">
-                <label>Nome:</label><input type="text" name="">
-                <label>RG:</label><input type="text" name="">
-                <input type="submit" value="CADASTRAR">
+ 
+  <div class="container">
+  <div class="cadastro">
+    <h1>Cadastro Funcionários</h1>
+        <form action="" method="post">
+            <input type="text" name="cargo" placeholder="Cargo">
+            <input type="text" name="nome" placeholder="Nome">
+			<input type="text" name="rg" placeholder="RG">
+            <input type="submit" value="Cadastrar">
             </form>
         </div>
     </div>
+</div>
 </body>
 </html>
