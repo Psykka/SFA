@@ -19,24 +19,32 @@ body {
     margin-top: 30px;
 }
 
-header label {
-    margin-left: 10px;
-    font-size: 30px;
-    font-weight: bold;
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header .title {
-    text-align: center;
+header label {
+    position: relative;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    float: right;
+    margin-right: auto;
+    margin-top: 7px;
 }
 
 header img {
-    height: 50px;
-    margin-top: 10px;
+    position: relative;
+    height: 3rem;
+    margin-top: 5px;
     margin-left: 15px;
+    margin-right: 5px;
 }
 
 header .logout {
-    float: right;
     margin-right: 15px;
 }
 
