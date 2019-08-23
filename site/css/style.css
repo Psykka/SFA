@@ -280,7 +280,7 @@ header .logout {
     color: #A75600
 }
 
-.cadastro input[type="text"], .cadastro input[type="password"] {
+.cadastro input[type="text"], .cadastro input[type="password"], .cadastro select {
     background: none;
     display: block;
     margin: 20px auto;
@@ -294,7 +294,7 @@ header .logout {
     transition: 0.25s;
 }
 
-.cadastro input[type="text"]:focus, .cadastro input[type="password"]:focus {
+.cadastro input[type="text"]:focus, .cadastro input[type="password"]:focus, .cadastro select:focus {
     width: 420px;
     border-color: #D96F00
 }

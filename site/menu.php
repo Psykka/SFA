@@ -29,7 +29,7 @@
     </header>
     
     <div class="container">
-        <a href="cadastro.php">
+        <a href="cadastro_funcionario.php">
             <div class="item-menu">
                 <label>Novo Cadastro</label>
                 <img src="./assets/cadastro.png">
