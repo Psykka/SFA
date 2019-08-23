@@ -53,7 +53,7 @@
     <div class="container">
         <div class="cadastro">
             <h1>Cadastro Funcionários</h1>
-            <select name="cargo" form="form" class="custom-select" id="cargo">
+            <select name="cargo" form="form" class="custom-select" id="cargo" required>
                 <?php
                     foreach ($rows as $value ) {
                         $id = $value['idCargo'];
@@ -64,8 +64,8 @@
                 ?>
             </select>
             <form action="" method="post" id="form">
-                <input type="text" name="nome" placeholder="Nome" id="nome">
-		        <input type="text" name="rg" placeholder="RG" id="RG">
+                <input type="text" name="nome" placeholder="Nome" id="nome" required>
+		        <input type="text" name="rg" placeholder="RG" id="RG" required>
                 <input type="submit" value="Cadastrar">
             </form>
         </div>
