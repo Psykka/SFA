@@ -88,6 +88,7 @@
                 confirmButtonText: 'SIM',
                 confirmButtonColor: '#FF8300',
                 showLoaderOnConfirm: true,
+                allowOutsideClick: false,
                 preConfirm: () =>{
                     return $.ajax({
                             type: "POST",
@@ -100,7 +101,6 @@
                             dataType: 'html'
                     })
                 },
-                allowOutsideClick: () => !Swal.isLoading()
             }).then(result =>{
                 if(result.value >= 1){
                     Swal.fire({
@@ -110,7 +110,7 @@
                         timer: 1500
                     })
                 }else{
-                    if(result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
+                    if(result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
                     Swal.fire('Erro!', result.value, 'error');
                 }
             });

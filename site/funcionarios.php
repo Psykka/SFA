@@ -82,6 +82,7 @@
                 confirmButtonText: 'SALVAR',
                 confirmButtonColor: '#FF8300',
                 showLoaderOnConfirm: true,
+                allowOutsideClick: false,
                 preConfirm: () =>{
                     return $.ajax({
                             type: "POST",
@@ -94,14 +95,13 @@
                             dataType: 'html'
                     })
                 },
-                allowOutsideClick: () => !Swal.isLoading()
             }).then(result => {
                 if(result >=1){
                     Swal.fire('Sucesso!', 'As alteções foram realizadas.', 'success').then(result =>{
                         window.location.href = ('funcionarios.php')
                     })
                 }else{
-                    if(result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error')
+                    if(result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error')
                     Swal.fire('Erro!', result.value, 'error');
                 }
             });
