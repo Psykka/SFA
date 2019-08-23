@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <title>SFA | Menu</title>
 </head>
 <body>
