@@ -318,3 +318,17 @@ header .logout {
     background-color: #FFB970;
     color: #A75600;
 }
+
+/*
+    FUNCIONARIOS
+*/
+
+#search {
+    background-color: #ededed;
+}
+
+#search img{
+    max-height: 20px;
+    border-collapse: collapse;
+    border: 0;
+}
