@@ -85,7 +85,7 @@
                 focusConfirm: true,
                 cancelButtonText: 'CANCELAR',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'SALVAR',
+                confirmButtonText: 'SIM',
                 confirmButtonColor: '#FF8300',
                 showLoaderOnConfirm: true,
                 preConfirm: () =>{
