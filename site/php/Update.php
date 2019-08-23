@@ -12,7 +12,7 @@
     $result = mysqli_query($db, $query);
 
     if($result){
-        mysqli_affected_rows($db);
+        echo mysqli_affected_rows($db);
         exit();
     }else{
         echo "Erro: " . mysqli_error($db);

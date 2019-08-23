@@ -66,7 +66,7 @@
                 .filter( n =>{ return n.id == id })
 
             
-            let {value: formValues} = await Swal.fire({
+            await Swal.fire({
                 title: `<strong>FUNCIONÁRIO (ID: ${func[0].id})</strong>`,
                 type: 'info',
                 html: `<form action="" method="post">
@@ -83,35 +83,28 @@
                 confirmButtonColor: '#FF8300',
                 showLoaderOnConfirm: true,
                 preConfirm: () =>{
-                    return[
-                        document.getElementById('editNome').value,
-                        document.getElementById('editRG').value
-                    ]
-                }
-            })
-
-            if (formValues) {
-                Swal.fire(JSON.stringify(formValues))
-
-                result = $.ajax({
+                    return $.ajax({
                             type: "POST",
                             url: 'php/Update.php',
                             data: {
-                                nome: formValues[0],
-                                rg: formValues[1],
+                                nome: document.getElementById('editNome').value,
+                                rg: document.getElementById('editRG').value,
                                 id: func[0].id
                             },
                             dataType: 'html'
-                        })
-                
-                result.done(() =>{
+                    })
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            }).then(result => {
+                if(result >=1){
                     Swal.fire('Sucesso!', 'As alteções foram realizadas.', 'success').then(result =>{
                         window.location.href = ('funcionarios.php')
                     })
-                })
-            }
-
-            if(!formValues) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
+                }else{
+                    if(result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error')
+                    Swal.fire('Erro!', result.value, 'error');
+                }
+            });
         }
     </script>
     <?php       
