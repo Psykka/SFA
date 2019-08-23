@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script type="text/javascript">
+        $(document).ready(() =>{
+            $('#editRG').mask('00.000.000-0')
+        })
+    </script>
     <title>SFA | Funcionarios</title>
 </head>
 <body>
@@ -66,7 +72,7 @@
                 html: `<form action="" method="post">
                             <p>
                                 Nome:<input class="swal2-input" value="${func[0].nome}" id="editNome"><br />
-                                RG:<input class="swal2-input" value="${func[0].rg}" id="editRG">
+                                RG:<input class="swal2-input" value="${func[0].rg}" id="editRG" maxlength="9">
                             </p>
                         </form>`,
                 showCancelButton: true,
