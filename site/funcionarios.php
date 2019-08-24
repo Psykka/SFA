@@ -96,7 +96,7 @@
                     })
                 },
             }).then(result => {
-                if(result >=1){
+                if(result.value >= 1){
                     Swal.fire('Sucesso!', 'As alteções foram realizadas.', 'success').then(result =>{
                         window.location.href = ('funcionarios.php')
                     })
