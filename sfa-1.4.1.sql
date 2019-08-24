@@ -27,7 +27,7 @@ create table funcionario(
 	idFunc int(10) unsigned not null auto_increment,
 	idCargo int(10) unsigned not null,
     nome varchar(255) not null,
-    RG varchar(255) not null,
+    rg varchar(255) not null,
     primary key (idFunc),
     foreign key (idCargo) references cargo(idCargo)
 );
