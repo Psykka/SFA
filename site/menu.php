@@ -7,7 +7,20 @@
     <title>SFA | Menu</title>
 </head>
 <body>
-    <?php
+    <?php        require_once("php/CMS.php");
+        $cms = new CMS();
+        $db = $cms->conectar();
+
+        $query = "SELECT * FROM funcionario";
+
+        $result = mysqli_query($db, $query);
+
+        $rows = Array();
+
+        while($i = mysqli_fetch_assoc($result)){
+            $rows[] = $i;
+        }
+
         session_start();
 
         if(!isset($_SESSION['login_user'])){
@@ -46,33 +59,35 @@
             <table>
                 <tr class="funcionario">
                     <th></th>
-                    <th colspan="2">Segunda</th>
-                    <th colspan="2">Terça</th>
-                    <th colspan="2">Quarta</th>
-                    <th colspan="2">Quinta</th>
-                    <th colspan="2">Sexta</th>
+                    <?php
+                        $diasDaSemana = Array(
+                            1 => "Segunda-Feira",
+                            2 => "Terça-Feira",
+                            3 => "Quarta-Feira",
+                            4 => "Quinta-Feira",
+                            5 => "Sexta-Feira"
+                        );
+
+                        $date = date('w');
+                        
+                        $dia = $diasDaSemana[$date];
+
+                        echo "<th colspan='2'>$dia</th>"
+                    ?>
+                    
                 </tr>
                 <tr class="funcionario">
+                    <th>Funcionario</th>
+                    <th>Saida</th><th>Entrada</th>
+                </tr>
+                <tr>
                     <?php
-                        //começo da tablela
-                        echo "<th>Funcionario</th>";
-                        for($i = 0; $i < 5; $i++){
-                            echo "<th>Saida</th><th>Entrada</th>";
+                        foreach($rows as $funcionario){
+                            $nome = $funcionario['nome'];
+
+                            echo "<tr><td>$nome</td><td>{horario saida}</td><td>{horario entrada}</td></tr>";
                         }
                     ?>
-                </tr>
-                <tr>
-                    <!--Funcionario--><td>Marcia</td>
-                    <!--Segunda--><td>11:40</td><td>13:30</td>
-                    <!--Terça--><td>11:40</td><td>13:30</td>
-                    <!--Quarta--><td>11:40</td><td>13:30</td>
-                    <!--Quinta--><td>11:40</td><td>13:30</td>
-                    <!--Sexta--><td>11:40</td><td>13:30</td>
-                </tr>
-                <tr>
-                    <!--Funcionario--><td>Mauro</td>
-                    <!--Segunda--><td>11:40</td><td>13:30</td>
-                    <!--Terça--><td>11:40</td><td>13:30</td>
                 </tr>
             </table>
         </div>
