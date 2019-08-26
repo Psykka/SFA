@@ -20,6 +20,14 @@
         while($i = mysqli_fetch_assoc($result)){
             $rows[] = $i;
         }
+        
+        $diasDaSemana = Array(
+            1 => "Segunda-Feira",
+            2 => "Terça-Feira",
+            3 => "Quarta-Feira",
+            4 => "Quinta-Feira",
+            5 => "Sexta-Feira"
+        );
 
         session_start();
 
@@ -60,13 +68,6 @@
                 <tr class="funcionario">
                     <th></th>
                     <?php
-                        $diasDaSemana = Array(
-                            1 => "Segunda-Feira",
-                            2 => "Terça-Feira",
-                            3 => "Quarta-Feira",
-                            4 => "Quinta-Feira",
-                            5 => "Sexta-Feira"
-                        );
 
                         $date = date('w');
                         
