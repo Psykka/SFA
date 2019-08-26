@@ -107,9 +107,51 @@
             });
         }
     </script>
+    <script type="text/javascript">
+            async function deleteFunc(id){
+                let func = funcionarios.map( f =>{ return {nome: f.nome, id: f.idFunc, rg: f.rg} })
+                            .filter( n =>{ return n.id == id })
+
+                await Swal.fire({
+                title: `<strong>Deseja deletar o funcinario\n${func[0].nome}</strong>`,
+                type: 'info',
+                showCancelButton: true,
+                focusConfirm: true,
+                cancelButtonText: 'CANCELAR',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'SIM',
+                confirmButtonColor: '#FF8300',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () =>{
+                    return $.ajax({
+                            type: "POST",
+                            url: 'php/Delete.php',
+                            data: {
+                                id: func[0].id
+                            },
+                            dataType: 'html'
+                    })
+                },
+            }).then(result => {
+                if(result.value >= 1){
+                    Swal.fire('Sucesso!', 'O funcionário foi deletado com sucesso.', 'success').then(result =>{
+                        window.location.href = ('funcionarios.php')
+                    })
+                }else{
+                    if(result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error')
+                    Swal.fire('Erro!', result.value, 'error');
+                }
+            });
+        }
+    </script>
     <?php       
         if(isset($_GET['funcId'])){
             echo "<script type='text/javascript'> editFunc(". $_GET['funcId'] .");</script>\n";
+        }
+
+        if(isset($_GET['deleteId'])){
+            echo "<script type='text/javascript'> deleteFunc(". $_GET['deleteId'] .");</script>\n";
         }
     ?>
     <script src="./js/rowSearch.js"></script>

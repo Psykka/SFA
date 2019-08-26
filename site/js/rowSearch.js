@@ -18,6 +18,9 @@ function rowSearch(funcionarios, inputId, divId){
                                     <a href="funcionarios.php?funcId=${ funcionario.id }">
                                         <img src="./assets/edit.png">
                                     </a>
+                                    <a href="funcionarios.php?deleteId=${ funcionario.id }">
+                                    <img src="./assets/delete.png">
+                                    </a>
                                 </td>
                             </tr>`;
         });
