@@ -1,51 +1,36 @@
 body {
-    background-color: #FF8300;
+    background-color: #1A0D7A;
     font-family: sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 .container {
-    background-color: #FFF;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 95%;
-    transform: translate(-50%, -50%);
-    height: 80%;
-    min-height: fit-content;
-    border-radius: 5px;
-    padding: 1.5%;
-    margin-top: 30px;
+    padding: 10px;
+    min-height: 100%;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    background-color: #1A0D7A;
 }
 
-header label {
-    position: relative;
-    width: 100%;
-    font-size: 30px;
+header strong{
+    font-size: 20px;
     font-weight: bold;
-    float: right;
     margin-right: auto;
-    margin-top: 7px;
+    color: #FFF;
 }
 
 header img {
-    position: relative;
     height: 3rem;
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-right: 5px;
+    margin: 15px;
 }
 
-header .logout {
-    margin-right: 15px;
+header a, header a:hover{
+    text-decoration: none;
+}
+
+header h1 {
+    color: #FFF;
 }
 
 /*
@@ -65,23 +50,24 @@ header .logout {
 }
 
 .login h1 {
-    color: #A75600;
+    color: #0B0342;
     text-transform: uppercase;
     font-weight: 500;
 }
 
 .login label {
     text-transform: uppercase;
-    color: #930000;
+    color: #dc3545;
     size: 3px;
 }
 
 .login img {
+    height: 60px;
     margin: 3px;
 }
 
 .login input::-webkit-input-placeholder {
-    color: #A75600
+    color: #0B0342
 }
 
 .login input[type="text"], .login input[type="password"] {
@@ -89,7 +75,7 @@ header .logout {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 3px solid #A75600;
+    border: 3px solid #1A0D7A;
     padding: 14px;
     width: 200px;
     outline: none;
@@ -100,7 +86,7 @@ header .logout {
 
 .login input[type="text"]:focus, .login input[type="password"]:focus {
     width: 220px;
-    border-color: #D96F00
+    border-color: #0B0342
 }
 
 .login input[type="submit"] {
@@ -108,19 +94,19 @@ header .logout {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 3px solid #FFB970;
+    border: 3px solid #3F30A8;
     padding: 14px;
     width: 100px;
     outline: none;
-    color: #D96F00;
+    color: #241592;
     border-radius: 20px;
     transition: 0.25s;
     cursor: pointer;
 }
 
 .login input[type="submit"]:hover {
-    background-color: #FFB970;
-    color: #A75600;
+    background-color: #3F30A8;
+    color: #FFF;
 }
 
 /*
@@ -128,40 +114,39 @@ header .logout {
 */
 
 .item-menu {
-    display: inline-block;
-    background-color: #FF8300;
-    width: 48%;
-    height: 90px;
-    margin: 5px;
+    background-color: #1A0D7A;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
 }
 
 .item-menu img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 60%;
+    height: 50px;
 }
 
-.item-menu:hover {
-    background-color: #FFB970;
-    color: #000000;
+.item-menu:hover{
+    background-color: #241592;
+    color: #FFF;
     transition: 0.25s;
 }
 
-.item-menu, a {
+.item-menu:hover a {
+    color: #FFF;
     text-decoration: none;
-    text-align: center;
 }
 
 .item-menu, a:visited {
-    color: #000000;
+    color: #FFF;
 }
 
-.item-menu label {
+.item-menu strong {
     margin-right: auto;
     font-size: 25px;
+    color: #FFF;
 }
 
 .days {
@@ -172,11 +157,7 @@ header .logout {
     transform: translate(-50%);
     display: block;
     margin-top: 30px;
-}
-
-.days table {
-    border-collapse: collapse;
-    border: 0;
+    text-align: center;
 }
 
 .days td, .days th {
@@ -184,7 +165,8 @@ header .logout {
 }
 
 .funcionario th {
-    background-color: #FF8300;
+    background-color: #1A0D7A;
+    color: #FFF;
 }
 
 .days tr {
@@ -196,12 +178,14 @@ header .logout {
 }
 
 .days table tr:hover {
-    background-color: #FFB970;
+    background-color: #3F30A8;
+    color: #FFF;
     transition: 0.25s;
 }
 
 .days table td:hover {
-    background-color: #D96F00;
+    background-color: #0B0342;
+    color: #FFF;
     transition: 0.25s;
 }
 
@@ -221,6 +205,7 @@ header .logout {
 
 .sesson img {
     display: block;
+    size: 300px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -230,73 +215,64 @@ header .logout {
     display: block;
     margin: 30px auto;
     text-align: center;
-    border: 3px solid #FFB970;
-    padding: 14px;
-    width: 200px;
+    border: 3px solid #3F30A8;
+    width: 300px;
+    height: 60px;
     outline: none;
-    color: #D96F00;
+    color: #120761;
     border-radius: 20px;
     transition: 0.25s;
-    cursor: pointer;
 }
 
 .sesson button:hover {
-    background-color: #FFB970;
-    color: #A75600;
+    background-color: #3F30A8;
+    color: #FFF;
 }
 
+.sesson a:hover{
+    text-decoration: none;
+}
 /*
     CADASTRO
 */
 
 .cadastro {
-    padding: 30px;
     background-color: #FFF;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-    border-radius: 20px;
 }
 
 .cadastro h1 {
-    color: #A75600;
+    color: #0B0342;
     text-transform: uppercase;
     font-weight: 500;
 }
 
-.cadastro label {
-    text-transform: uppercase;
-    color: #930000;
-    size: 3px;
-}
-
-.cadastro img {
-    margin: 3px;
-}
-
 .cadastro input::-webkit-input-placeholder {
-    color: #A75600
+    color: #241592;
 }
 
 .cadastro input[type="text"], .cadastro input[type="password"], .cadastro select {
-    background: none;
     display: block;
-    margin: 20px auto;
     text-align: center;
-    border: 3px solid #A75600;
-    padding: 14px;
-    width: 400px;
+    text-align-last: center;
+    margin: 20px auto;
+    border: 3px solid #120761;
+    padding: 10px;
+    width: 300px;
     outline: none;
     color: #000000;
     border-radius: 20px;
     transition: 0.25s;
 }
 
+.cadastro select {
+    padding: 0;
+    color: #241592;
+}
+
 .cadastro input[type="text"]:focus, .cadastro input[type="password"]:focus, .cadastro select:focus {
-    width: 420px;
-    border-color: #D96F00
+    width: 330px;
+    border-color: #3F30A8;
 }
 
 .cadastro input[type="submit"] {
@@ -304,19 +280,19 @@ header .logout {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 3px solid #FFB970;
+    border: 3px solid #3F30A8;
     padding: 14px;
     width: 200px;
     outline: none;
-    color: #D96F00;
+    color: #241592;
     border-radius: 20px;
     transition: 0.25s;
     cursor: pointer;
 }
 
 .cadastro input[type="submit"]:hover {
-    background-color: #FFB970;
-    color: #A75600;
+    background-color: #3F30A8;
+    color: #FFF;
 }
 
 /*
