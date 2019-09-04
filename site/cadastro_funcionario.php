@@ -51,7 +51,7 @@
             <a href="menu.php">
                 <img src="./assets/back.png">
                 <strong>Voltar</strong>
-        </a>
+            </a>
         </div>
         <div>
             <a href="menu.php?logout=true">
