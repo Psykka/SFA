@@ -71,6 +71,18 @@
                     <img src="./assets/funcionarios.png">
                 </a>
             </div>
+            <div class="item-menu col-sm-12 col-md-5">
+                <a href="horario.php">
+                    <strong>Horarios</strong>
+                    <img src="./assets/horario.png">
+                </a>
+            </div>
+            <div class="item-menu col-sm-12 col-md-5">
+                <a href="frequencia.php">
+                    <strong>Frequencia</strong>
+                    <img src="./assets/frequencia.png">
+                </a>
+            </div>
         </div>
         <div class="row">
             <div class="days">
