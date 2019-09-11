@@ -72,8 +72,8 @@
                 </a>
             </div>
             <div class="item-menu col-sm-12 col-md-5">
-                <a href="horario.php">
-                    <strong>Horarios</strong>
+                <a href="faltas.php">
+                    <strong>Controle de Faltas</strong>
                     <img src="./assets/horario.png">
                 </a>
             </div>
