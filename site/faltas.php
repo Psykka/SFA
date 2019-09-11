@@ -12,6 +12,20 @@
 </head>
 <body>
     <?php
+        require_once("php/CMS.php");
+        $cms = new CMS();
+        $db = $cms->conectar();
+
+        $query = "SELECT * FROM funcionario";
+
+        $result = mysqli_query($db, $query);
+
+        $rows = Array();
+
+        while($i = mysqli_fetch_assoc($result)){
+            $rows[] = $i;
+        }
+
         session_start();
 
         if(!isset($_SESSION['login_user'])){
@@ -55,13 +69,6 @@
     </header>
 
     <div class="container">
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Busca por provedor</span>
-            </div>
-            <input type="text" class="form-control" autocomplete="off" id="nome" onkeyup="rowSearch(funcionarios, 'nome', 'search');">
-        </div>
-        
         <table class="days">
             <thead>
                 <tr class="funcionario">
@@ -87,7 +94,7 @@
                             if($i > date('t')){
                                 return;
                             }else{
-                                echo "<th colspan='2'>$i</th>";
+                                echo "<th>$i</th>";
                             }
                         }
                     ?>
@@ -95,12 +102,19 @@
             </thead>
             <tbody>
                 <?php
-                    
+                    foreach($rows as $funcionario){
+                        $nome = $funcionario['nome'];
+                        $id = $funcionario['idFunc'];
+
+                        $chamada = "";
+
+                        for($i = 1; $i <= 16; $i++){
+                            $chamada = $chamada . "<td> <select name='chamada'><option value='P'>P</option></select> </td>";
+                        }
+
+                        echo "<tr><th>$id</th><td>$nome</td> $chamada </tr>";
+                    }
                 ?>
-                <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                </tr>
             </tbody>
         </table>
     </div>
