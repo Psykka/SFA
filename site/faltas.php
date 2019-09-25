@@ -19,16 +19,23 @@
         $cms = new CMS();
         $db = $cms->conectar();
 
-        $query = "SELECT * FROM funcionario";
+        $queryFunc = "SELECT * FROM funcionario";
+        $queryMotivo = "SELECT * FROM motivo";
 
-        $result = mysqli_query($db, $query);
+        $resultFunc = mysqli_query($db, $queryFunc);
+        $resultMotivo = mysqli_query($db, $queryMotivo);
 
-        $rows = Array();
+        $rowsFunc = Array();
+        $rowsMotivo = Array();
 
-        while($i = mysqli_fetch_assoc($result)){
-            $rows[] = $i;
+        while($i = mysqli_fetch_assoc($resultFunc)){
+            $rowsFunc[] = $i;
         }
-
+        
+        while($i = mysqli_fetch_assoc($resultMotivo)){
+            $rowsMotivo[] = $i;
+        }
+        
         if(isset($_GET['logout']) == true){
             session_destroy();
             header("Location: index.php");
@@ -62,18 +69,26 @@
             </div>
             <div id="search" width="500" height="20"></div>
             <form action="" method="post" id="form" class="cadastro">
+                <input type="number" name="idFunc" disabled>
                 <input type="date" name="dia" id="" value="<?php echo gmdate("Y-m-j")?>" required>
-                <input type="text" name="idFunc" placeholder="Nome" autocomplete="off" id="idFunc" required>
-                <select name="motivo" form="form" id="motivo">
+                <input type="text" name="nome" placeholder="Nome" autocomplete="off" id="nome" disabled>
+                <select name="motivo" form="form" id="motivo" required>
                     <option value="" selected>Motivo</option>
-                    <!-- Pegar no banco de dados os motivos... -->
+                    <?php
+                        foreach ($rowsMotivo as $value) {
+                            $id = $value['idMotivo'];
+                            $nome = $value['motivo'];
+
+                            echo "<option value='$id'>$nome</option>";
+                        }
+                    ?>
                 </select>
                 <input type="submit" value="Marcar falta">
             </form>
         </div>
     </div>
     <script type="text/javascript">
-    const funcionarios = JSON.parse('<?php echo json_encode($rows); ?>');
+    const funcionarios = JSON.parse('<?php echo json_encode($rowsFunc); ?>');
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script type="text/javascript">
@@ -98,7 +113,7 @@
                     type: "POST",
                     url: 'php/MarcarFalta.php',
                     data: {
-                        nome: document.getElementById('idFunc').value,
+                        idFunc: document.getElementById('idFunc').value,
                         motivo: document.getElementById('motivo').value
                     },
                     dataType: 'html'
@@ -120,7 +135,7 @@
         });
     }
     </script>
-    <script src="./js/rowSearch.js"></script>
+    <script src="./js/rowFaltasSearch.js"></script>
 </body>
 
 </html>

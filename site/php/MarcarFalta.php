@@ -3,10 +3,10 @@
     $cms = new CMS();
     $db = $cms->conectar();
 
-    $nome = $_POST['nome'];
+    $idFunc = $_POST['nome'];
     $motivo = $_POST['motivo'];
 
-    $query = "INSERT INTO faltas VALUES (null, '$nome', '$motivo')";
+    $query = "INSERT INTO faltas VALUES (null, '$idFunc', '$motivo')";
 
     $result = mysqli_query($db, $query);
 
