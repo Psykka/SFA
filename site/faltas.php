@@ -41,6 +41,10 @@
             header("Location: index.php");
             die();
         }
+
+        if(isset($_GET['funcId']) == true){
+            $funcId = $_GET['funcId'];
+        }
     ?>
     <header class="d-flex justify-content-between">
         <div>
@@ -69,9 +73,9 @@
             </div>
             <div id="search" width="500" height="20"></div>
             <form action="" method="post" id="form" class="cadastro">
-                <input type="number" name="idFunc" disabled>
-                <input type="date" name="dia" id="" value="<?php echo gmdate("Y-m-j")?>" required>
-                <input type="text" name="nome" placeholder="Nome" autocomplete="off" id="nome" disabled>
+                <input type="number" name="idFunc" id="idFunc" disabled>
+                <input type="date" name="dia" id="dia" value="<?php echo gmdate("Y-m-j")?>" required>
+                <input type="text" name="nome" placeholder="Nome" autocomplete="off" id="nomeFunc" disabled>
                 <select name="motivo" form="form" id="motivo" required>
                     <option value="" selected>Motivo</option>
                     <?php
@@ -88,7 +92,18 @@
         </div>
     </div>
     <script type="text/javascript">
-    const funcionarios = JSON.parse('<?php echo json_encode($rowsFunc); ?>');
+        const funcionarios = JSON.parse('<?php echo json_encode($rowsFunc); ?>');
+    </script>
+    <script type="text/javascript">
+        function setValues(id, funcionarios){
+            funcionario = funcionarios.filter(x => x.idFunc == id);
+            if(!id || !funcionario) return;
+            $(document).ready(() =>{
+                $("#idFunc").val(id);
+                $("#nomeFunc").val(funcionario[0].nome);
+            });
+        }
+        setValues(<?php echo $funcId?>, funcionarios);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script type="text/javascript">
@@ -114,7 +129,8 @@
                     url: 'php/MarcarFalta.php',
                     data: {
                         idFunc: document.getElementById('idFunc').value,
-                        motivo: document.getElementById('motivo').value
+                        motivo: document.getElementById('motivo').value,
+                        dia: document.getElementById('dia').value,
                     },
                     dataType: 'html'
                 })
@@ -123,7 +139,7 @@
             if (result.value >= 1) {
                 Swal.fire({
                     type: 'success',
-                    title: 'Funcionário cadastrado com sucesso!',
+                    title: 'Falta marcada com sucesso!',
                     showConfirmButton: false,
                     timer: 1500
                 })
