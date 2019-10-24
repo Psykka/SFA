@@ -124,6 +124,10 @@
             confirmButtonColor: '#5cb85c',
             showLoaderOnConfirm: true,
             allowOutsideClick: false,
+            onOpen: () => {
+                if(!document.getElementById('nomeFunc').value)
+                    return Swal.fire('Calma la!', 'Você precisa me dizer qual funcionario.', 'info');
+            },
             preConfirm: () => {
                 return $.ajax({
                     type: "POST",
@@ -145,8 +149,8 @@
                     timer: 1500
                 })
             } else {
-                if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire(
-                    'Cancelado!', 'As alteções não foram realizadas.', 'error');
+                if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) 
+                    return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
                 Swal.fire('Erro!', result.value, 'error');
             }
         });
