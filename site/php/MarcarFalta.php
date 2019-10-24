@@ -4,10 +4,10 @@
     $db = $cms->conectar();
 
     $idFunc = $_POST['idFunc'];
-    $motivo = $_POST['motivo'];
-    $dia = $_POST['data']
+    $idMotivo = $_POST['motivo'];
+    $dia = $_POST['dia'];
 
-    //$query = "INSERT INTO falta VALUES (null, '$idFunc', '$motivo')";
+    $query = "INSERT INTO faltas VALUES (null, '$idFunc', '$idMotivo', '$dia', 0)";
 
     $result = mysqli_query($db, $query);
 
