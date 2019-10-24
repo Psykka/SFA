@@ -151,14 +151,14 @@
             })
 
         await Swal.fire({
-            title: `<strong>Deseja deletar o funcinario\n${func[0].nome}</strong>`,
+            title: `Deseja deletar o funcinario:\n${func[0].nome}`,
             type: 'info',
             showCancelButton: true,
             focusConfirm: true,
             cancelButtonText: 'CANCELAR',
-            cancelButtonColor: '#d33',
+            cancelButtonColor: '#d9534f',
             confirmButtonText: 'SIM',
-            confirmButtonColor: '#FF8300',
+            confirmButtonColor: '#5cb85c',
             showLoaderOnConfirm: true,
             allowOutsideClick: false,
             preConfirm: () => {
