@@ -119,8 +119,9 @@
             showCancelButton: true,
             focusConfirm: true,
             cancelButtonText: 'CANCELAR',
-            cancelButtonColor: '#d33',
+            cancelButtonColor: '#d9534f',
             confirmButtonText: 'SIM',
+            confirmButtonColor: '#5cb85c',
             showLoaderOnConfirm: true,
             allowOutsideClick: false,
             preConfirm: () => {
