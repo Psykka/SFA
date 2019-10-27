@@ -35,7 +35,11 @@ create table faltas(
     idFunc int(10) unsigned not null,
     idMotivo int(10) unsigned not null,
     dia date not null,
-    visto int default 0 check(status in (0, 1 , 2)), /* Visto do diretor */
+    visto int(1) default 0 check(status in (0, 1 , 2)), /* Visto do diretor */
+    atrasoMinutos int(2) default null,
+    quantidadeAulas int(2) default null,
+    quantidadeHaes int(10) default null,
+    justificativa varchar(255) default null,
     foreign key (idFunc) references funcionario(idFunc),
     foreign key (idMotivo) references motivo(idMotivo),
     primary key (idFalta)

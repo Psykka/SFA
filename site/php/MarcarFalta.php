@@ -7,7 +7,7 @@
     $idMotivo = $_POST['motivo'];
     $dia = $_POST['dia'];
 
-    $query = "INSERT INTO faltas VALUES (null, '$idFunc', '$idMotivo', '$dia', 0)";
+    $query = "INSERT INTO faltas VALUES (null, '$idFunc', '$idMotivo', '$dia', 0, null, null, null, null)";
 
     $result = mysqli_query($db, $query);
 

@@ -66,33 +66,87 @@
             <div id="search"></div>
         </div>
         <div class="cadastro" style="display: inline !important">
-            <form class="" style="margin-top: 5px" method="post">
+            <form id="form" style="margin-top: 5px" method="post">
                 <strong>Data:&nbsp</strong><input type="date" id="dia" disabled>
+                <strong>ID:</strong><input type="number" id="id" disabled>
                 <input type="text" placeholder="Nome" id="nome" disabled>
                 <input type="text" placeholder="Motivo" id="motivo" disabled>
-                <input type="text" placeholder="Atraso em minutos" required>
-                <input type="text" placeholder="Quantidade de aulas" required>
-                <input type="text" placeholder="Quantidade de haes" required>
-                <input type="text" placeholder="Justificativa" required>
+                <input type="text" placeholder="Atraso em minutos" id="atrasoMinutos" required>
+                <input type="text" placeholder="Quantidade de aulas" id="quantidadeAulas" required>
+                <input type="text" placeholder="Quantidade de haes" id="quantidadeHaes" required>
+                <input type="text" placeholder="Justificativa" id="justificativa" required>
+                <input type="submit" value="Enviar">
             </form>
-            <input type="submit" value="Enviar">
         </div>
     </div>
     <script type="text/javascript">
         const faltas = JSON.parse('<?php echo json_encode($rows); ?>');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script type="text/javascript">
         function setValues(id, faltas){
             falta = faltas.filter(x => x.idFalta == id);
             if(!id || !falta) return;
-            console.log(faltas)
             $(document).ready(() =>{
+                $("#id").val(id)
                 $("#nome").val(falta[0].nome);
                 $("#motivo").val(falta[0].motivo);
                 $("#dia").val(falta[0].dia)
             });
         }
         setValues(<?php echo $idFalta?>, faltas);
+    </script>
+    <script type="text/javascript">
+        $('#form').submit(() => {
+            insert();
+            return false;
+        });
+
+        async function insert() {
+            await Swal.fire({
+                title: 'Deseja marcar a falta?',
+                type: 'question',
+                showCancelButton: true,
+                focusConfirm: true,
+                cancelButtonText: 'CANCELAR',
+                cancelButtonColor: '#d9534f',
+                confirmButtonText: 'SIM',
+                confirmButtonColor: '#5cb85c',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                onOpen: () => {
+                    if(!document.getElementById('nome').value)
+                        return Swal.fire('Calma la!', 'Você precisa me dizer qual funcionario.', 'info');
+                },
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: 'php/RegistroOcorrencia.php',
+                        data: {
+                            id: document.getElementById('id').value,
+                            atrasoMinutos: document.getElementById('atrasoMinutos').value,
+                            quantidadeAulas: document.getElementById('quantidadeAulas').value,
+                            quantidadeHaes: document.getElementById('quantidadeHaes').value,
+                            justificativa: document.getElementById('justificativa').value
+                        },
+                        dataType: 'html'
+                    })
+                },
+            }).then(result => {
+                if (result.value >= 1) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Falta marcada com sucesso!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } else {
+                    if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) 
+                        return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
+                    Swal.fire('Erro!', result.value, 'error');
+                }
+            });
+        }
     </script>
     <script src="./js/rowRegistroOcorrencias.js"></script>
 </body>
