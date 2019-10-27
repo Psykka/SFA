@@ -60,7 +60,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="item-menu col-sm-12 col-md-5">
-                <a href="cadastro_funcionario.php">
+                <a href="cadastro.php">
                     <strong>Novo Cadastro</strong>
                     <img src="./assets/cadastro.png">
                 </a>
