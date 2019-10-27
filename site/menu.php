@@ -85,20 +85,25 @@
                     <img src="./assets/frequencia.png">
                 </a>
             </div>
+            <div class="item-menu col-sm-12 col-md-5">
+                <a href="gerar_relatorio.php">
+                    <strong>Gerar Relatorio</strong>
+                    <img src="./assets/relatorio.png">
+                </a>
+            </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="days">
                 <table>
                     <thead>
                         <tr class="funcionario">
                             <th></th>
                             <?php
-
-                                $date = date('w');
+                                // $date = date('w');
                                 
-                                $dia = $diasDaSemana[$date];
+                                // $dia = $diasDaSemana[$date];
 
-                                echo "<th colspan='2'>$dia</th>"
+                                // echo "<th colspan='2'>$dia</th>"
                             ?>
                         </tr>
                         <tr class="funcionario">
@@ -108,16 +113,16 @@
                     <thead>
                     <tr>
                         <?php
-                            foreach($rows as $funcionario){
-                                $nome = $funcionario['nome'];
+                            // foreach($rows as $funcionario){
+                            //     $nome = $funcionario['nome'];
 
-                                echo "<tr><td>$nome</td><td>{horario saida}</td><td>{horario entrada}</td></tr>";
-                            }
+                            //     echo "<tr><td>$nome</td><td>{horario saida}</td><td>{horario entrada}</td></tr>";
+                            // }
                         ?>
                     </tr>
                 </table>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>

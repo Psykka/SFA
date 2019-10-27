@@ -9,7 +9,7 @@
     $quantidadeHaes = $_POST['quantidadeHaes'];
     $justificativa = $_POST['justificativa'];
 
-    $query = "UPDATE `faltas` SET atrasoMinutos = '$atrasoMinutos', quantidadeAulas = '$quantidadeAulas', quantidadeHaes = '$quantidadeHaes', justificativa = '$justificativa' WHERE `faltas`.`idfalta` = $id";
+    $query = "UPDATE `faltas` SET atrasoMinutos = '$atrasoMinutos', quantidadeAulas = '$quantidadeAulas', quantidadeHaes = '$quantidadeHaes', justificativa = '$justificativa', visto = 1 WHERE `faltas`.`idfalta` = $id";
 
     $result = mysqli_query($db, $query);
 
