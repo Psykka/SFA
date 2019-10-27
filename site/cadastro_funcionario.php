@@ -18,6 +18,8 @@
 </head>
 <body>
     <?php
+        session_start();
+
         require_once("php/CMS.php");
         $cms = new CMS();
         $db = $cms->conectar();
@@ -31,8 +33,6 @@
         while($i = mysqli_fetch_assoc($result)){
             $rows[] = $i;
         }
-    
-        session_start();
 
         if(!isset($_SESSION['login_user'])){
             header("location:sessao.php");

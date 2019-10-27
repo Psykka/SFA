@@ -15,6 +15,8 @@
 
 <body onload="rowSearch(funcionarios, 'nome', 'search');">
     <?php
+        session_start();
+
         require_once("php/CMS.php");
         $cms = new CMS();
         $db = $cms->conectar();

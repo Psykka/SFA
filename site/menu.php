@@ -10,7 +10,9 @@
     <title>SFA | Menu</title>
 </head>
 <body>
-    <?php        
+    <?php
+        session_start();
+
         require_once("php/CMS.php");
         $cms = new CMS();
         $db = $cms->conectar();
@@ -32,8 +34,6 @@
             4 => "Quinta-Feira",
             5 => "Sexta-Feira"
         );
-
-        session_start();
 
         if(!isset($_SESSION['login_user'])){
             header("location: sessao.php");
@@ -78,8 +78,8 @@
                 </a>
             </div>
             <div class="item-menu col-sm-12 col-md-5">
-                <a href="frequencia.php">
-                    <strong>Frequencia</strong>
+                <a href="registro_ocorrencias.php">
+                    <strong>Registro de Ocorrências</strong>
                     <img src="./assets/frequencia.png">
                 </a>
             </div>
