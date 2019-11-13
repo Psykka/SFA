@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -73,7 +73,10 @@
                 </div>
                 <input type="text" class="form-control" autocomplete="off" id="nome" onkeyup="rowSearch(funcionarios, 'nome', 'search');">
             </div>
-            <div id="search" width="500" height="20"></div>
+            <div style="border: 1px solid">
+                <h6 style="text-align: center; ">Funcionarios</h6>
+                <div id="search"></div>
+            </div>
             <form action="" method="post" id="form" class="cadastro">
                 <input type="number" name="idFunc" id="idFunc" disabled>
                 <input type="date" name="dia" id="dia" value="<?php echo gmdate("Y-m-j")?>" required>

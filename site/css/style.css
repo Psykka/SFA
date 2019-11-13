@@ -308,3 +308,7 @@ header h1 {
     border-collapse: collapse;
     border: 0;
 }
+
+#search a:visited, #search a {
+    color: black !important;
+}
