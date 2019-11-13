@@ -29,7 +29,7 @@
         $db = $cms->conectar();
         
         if(!isset($_POST['mes'])){
-            echo "Não consegui gerar o relatorio.";
+            echo "Não consegui gerar o relatório.";
             die();
         }
         $meses = array(
@@ -59,12 +59,12 @@
     <table>
         <thead>
             <tr>
-                <th colspan="9">Relatorio de faltas - <?php echo "$meses[$mes] de $ano"?></th>
+                <th colspan="9">Relatório de faltas - <?php echo "$meses[$mes] de $ano"?></th>
             </tr>
         </thead>
         <tr>
             <th>ID Falta</th>
-            <th>Funcionario</th>
+            <th>Funcionário</th>
             <th>Dia</th>
             <th>Motivo</th>
             <th>Atraso em minutos</th>

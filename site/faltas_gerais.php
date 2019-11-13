@@ -61,11 +61,11 @@
             <h1>Faltas Gerais</h1>
             <?php
                 if($result->num_rows == 0){
-                    echo "Não ha nada aqui...";
+                    echo "Não há nada aqui...";
                 }
                 while($row = mysqli_fetch_array($result)){
                     for($i = 0; $i <= 8; $i++){
-                        echo "<td>$row[$i]</td>";
+                        echo "<td>$row[$i]<br></td>";
                     }
                 }
             ?>

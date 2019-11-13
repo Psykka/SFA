@@ -16,7 +16,7 @@
         $('#editRG').mask('00.000.000-0')
     })
     </script>
-    <title>SFA | Funcionarios</title>
+    <title>SFA | Funcionários</title>
 </head>
 
 <body onload="rowSearch(funcionarios, 'nome', 'search');">
@@ -125,12 +125,12 @@
             },
         }).then(result => {
             if (result.value >= 1) {
-                Swal.fire('Sucesso!', 'As alteções foram realizadas.', 'success').then(result => {
+                Swal.fire('Sucesso!', 'As alterações foram realizadas.', 'success').then(result => {
                     window.location.href = ('funcionarios.php')
                 })
             } else {
                 if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire(
-                    'Cancelado!', 'As alteções não foram realizadas.', 'error')
+                    'Cancelado!', 'As alterações não foram realizadas.', 'error')
                 Swal.fire('Erro!', result.value, 'error');
             }
         });
@@ -150,7 +150,7 @@
             })
 
         await Swal.fire({
-            title: `Deseja deletar o funcinario:\n${func[0].nome}`,
+            title: `Deseja deletar o funcionário:\n${func[0].nome}`,
             type: 'info',
             showCancelButton: true,
             focusConfirm: true,
@@ -177,7 +177,7 @@
                 })
             } else {
                 if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire(
-                    'Cancelado!', 'As alteções não foram realizadas.', 'error')
+                    'Cancelado!', 'As alterações não foram realizadas.', 'error')
                 Swal.fire('Erro!', result.value, 'error');
             }
         });

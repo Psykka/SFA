@@ -116,7 +116,7 @@
                 allowOutsideClick: false,
                 onOpen: () => {
                     if(!document.getElementById('nome').value)
-                        return Swal.fire('Calma la!', 'Você precisa me dizer qual funcionario.', 'info');
+                        return Swal.fire('Calma lá!', 'Você precisa me dizer qual funcionário.', 'info');
                 },
                 preConfirm: () => {
                     return $.ajax({
@@ -142,7 +142,7 @@
                     })
                 } else {
                     if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) 
-                        return Swal.fire('Cancelado!', 'As alteções não foram realizadas.', 'error');
+                        return Swal.fire('Cancelado!', 'As alterações não foram realizadas.', 'error');
                     Swal.fire('Erro!', result.value, 'error');
                 }
             });

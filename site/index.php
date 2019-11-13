@@ -34,13 +34,13 @@
                 $_SESSION['login_user'] = $username;
                 header("location: menu.php");
             }else {
-                $loginerror = "O nome de usuario ou senha estão incorretos";
+                $loginerror = "O nome de usuário ou senha estão incorretos";
             }
         }
     ?>
 
     <div class="login">
-    <h1>login</h1>
+    <h1>Login</h1>
     <img src="assets/Logo1.png">
         <form action="" method="post">
             <input type="text" name="user" placeholder="User" autocomplete="off">

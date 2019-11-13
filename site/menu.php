@@ -87,7 +87,7 @@
             </div>
             <div class="item-menu col-sm-12 col-md-5">
                 <a href="gerar_relatorio.php">
-                    <strong>Gerar Relatorio</strong>
+                    <strong>Gerar Relatório</strong>
                     <img src="./assets/relatorio.png">
                 </a>
             </div>
@@ -113,8 +113,8 @@
                             ?>
                         </tr>
                         <tr class="funcionario">
-                            <th>Funcionario</th>
-                            <th>Saida</th><th>Entrada</th>
+                            <th>Funcionário</th>
+                            <th>Saída</th><th>Entrada</th>
                         </tr>
                     <thead>
                     <tr>

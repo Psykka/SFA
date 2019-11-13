@@ -69,8 +69,8 @@
         <h1>Cadastro</h1>
         <ul class="nav nav-tabs justify-content-center">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">Cargos</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">Funcionario</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">Motivo</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">Funcionários</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">Motivos</a></li>
         </ul>
 
         <div class="tab-content">
@@ -178,7 +178,7 @@
                     })
                 } else {
                     if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) return Swal.fire(
-                        'Cancelado!', 'As alteções não foram realizadas.', 'error');
+                        'Cancelado!', 'As alterações não foram realizadas.', 'error');
                     Swal.fire('Erro!', result.value, 'error');
                 }
             });
