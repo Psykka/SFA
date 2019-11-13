@@ -23,8 +23,13 @@
         $cms = new CMS();
         $db = $cms->conectar();
 
-        $mes = date('m');
-        $ano = date('Y');
+        if(empty($_POST['mes'])){
+            $mes = date('m');
+            $ano = date('Y');
+        }else{
+            $mes = intval(substr($_POST['mes'], 5));
+            $ano = substr($_POST['mes'], 0, 4);
+        }
 
         $query = "select falt.idFalta, func.nome, falt.dia, m.motivo, falt.atrasoMinutos, falt.quantidadeAulas, falt.quantidadeHaes, falt.justificativa, falt.visto from faltas as falt inner join funcionario as func inner join motivo as m on falt.idFunc = func.idfunc and falt.idMotivo = m.idMotivo where MONTH(dia) = $mes and YEAR(dia) = $ano;";
 
@@ -59,8 +64,10 @@
     <div class="container">
         <div class="cadastro">
             <h1>Faltas Gerais</h1>
-            <?php
-            ?>
+            <form action="#" method="post">
+                <input type="month" name="mes" id="mes">
+                <input type="submit" value="Ver mês">
+            </form>
             <table class="table">
                 <?php
                     if($result->num_rows == 0){

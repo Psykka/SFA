@@ -47,7 +47,7 @@
             'Dezembro'
         );
 
-        $mes = substr($_POST['mes'], 5);
+        $mes = intval(substr($_POST['mes'], 5));
         $ano = substr($_POST['mes'], 0, 4);
 
         $query = "select falt.idFalta, func.nome, falt.dia, m.motivo, falt.atrasoMinutos, falt.quantidadeAulas, falt.quantidadeHaes, falt.justificativa, falt.visto from faltas as falt inner join funcionario as func inner join motivo as m on falt.idFunc = func.idfunc and falt.idMotivo = m.idMotivo where MONTH(dia) = $mes and YEAR(dia) = $ano;";
@@ -59,7 +59,7 @@
     <table>
         <thead>
             <tr>
-                <th colspan="9">Relatorio de faltas - <?php if(empty($_POST['mes'])){ echo "$meses[$mes] de $ano"; } else { echo "Indefinido"; }?></th>
+                <th colspan="9">Relatorio de faltas - <?php if(!empty($_POST['mes'])){ echo "$meses[$mes] de $ano"; } else { echo "Indefinido"; }?></th>
             </tr>
         </thead>
         <tr>

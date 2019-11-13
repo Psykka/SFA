@@ -69,7 +69,7 @@
         <h1>Cadastro</h1>
         <ul class="nav nav-tabs justify-content-center">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">Cargos</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">Funcionários</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu2">Funcionários</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">Motivos</a></li>
         </ul>
 
@@ -80,7 +80,7 @@
                     <input type="submit" value="Cadastrar">
                 </form>
             </div>
-            <div id="menu2" class="tab-pane fade">
+            <div id="menu2" class="tab-pane active">
                 <select name="cargo" form="form2" class="custom-select" id="cargo" required>
                     <option value="" selected>Escolha um cargo...</option>
                     <?php

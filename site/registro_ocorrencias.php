@@ -71,10 +71,10 @@
                 <strong>ID:</strong><input type="number" id="id" disabled>
                 <input type="text" placeholder="Nome" id="nome" disabled>
                 <input type="text" placeholder="Motivo" id="motivo" disabled>
-                <input type="text" placeholder="Atraso em minutos" id="atrasoMinutos" required>
-                <input type="text" placeholder="Quantidade de aulas" id="quantidadeAulas" required>
-                <input type="text" placeholder="Quantidade de haes" id="quantidadeHaes" required>
-                <input type="text" placeholder="Justificativa" id="justificativa" required>
+                <input type="text" placeholder="Atraso em minutos" id="atrasoMinutos" maxlength="2" required>
+                <input type="text" placeholder="Quantidade de aulas" id="quantidadeAulas" maxlength="2" required>
+                <input type="text" placeholder="Quantidade de haes" id="quantidadeHaes" maxlength="10"  required>
+                <input type="text" placeholder="Justificativa" id="justificativa" maxlength="255" required>
                 <input type="submit" value="Enviar">
             </form>
         </div>
