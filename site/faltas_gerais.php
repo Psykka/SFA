@@ -60,32 +60,16 @@
         <div class="cadastro">
             <h1>Faltas Gerais</h1>
             <?php
-                if($result->num_rows == 0){
-                    echo "Não há nada aqui...";
-                }
-<<<<<<< HEAD
-                while($row = mysqli_fetch_array($result)){
-                    for($i = 0; $i <= 8; $i++){
-                        echo "<td>$row[$i]<br></td>";
-                    }
-                }
-=======
->>>>>>> 1c25d49247ac6653f7383538e7a991688ee06c51
             ?>
             <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Funcionario</th>
-                    <th scope="col">Dia</th>
-                    <th scope="col">Motivo</th>
-                    <th scope="col">Atraso  em minutos</th>
-                    <th scope="col">Quantidade de Aulas</th>
-                    <th scope="col">Quantidade de HAES</th>
-                    <th scope="col">Justificatica</th>
-                    <th scope="col">Visto</th>
-                    </tr>
-                </thead>
+                <?php
+                    if($result->num_rows == 0){
+                        echo "Não há nada aqui...";
+                        die();
+                    }else{
+                        echo "<thead><tr><th scope='col'>ID</th><th scope='col'>Funcionario</th><th scope='col'>Dia</th><th scope='col'>Motivo</th><th scope='col'>Atraso  em minutos</th><th scope='col'>Quantidade de Aulas</th><th scope='col'>Quantidade de HAES</th><th scope='col'>Justificatica</th><th scope='col'>Visto</th></tr></thead>";
+                    }
+                ?>
                 <tbody>
                     <?php
                         while($row = mysqli_fetch_array($result)){

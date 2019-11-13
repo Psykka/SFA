@@ -86,15 +86,15 @@
                 </a>
             </div>
             <div class="item-menu col-sm-12 col-md-5">
-                <a href="gerar_relatorio.php">
-                    <strong>Gerar Relatório</strong>
-                    <img src="./assets/relatorio.png">
-                </a>
-            </div>
-            <div class="item-menu col-sm-12 col-md-5">
                 <a href="faltas_gerais.php">
                     <strong>Faltas Gerais</strong>
                     <img src="./assets/faltas-gerais.png">
+                </a>
+            </div>
+            <div class="item-menu col-sm-12 col-md-5">
+                <a href="gerar_relatorio.php">
+                    <strong>Gerar Relatório</strong>
+                    <img src="./assets/relatorio.png">
                 </a>
             </div>
         </div>

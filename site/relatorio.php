@@ -28,13 +28,8 @@
         $cms = new CMS();
         $db = $cms->conectar();
         
-<<<<<<< HEAD
-        if(!isset($_POST['mes'])){
-            echo "Não consegui gerar o relatório.";
-=======
         if(empty($_POST['mes'])){
-            echo "Não consegui gerar o relatorio.";
->>>>>>> 1c25d49247ac6653f7383538e7a991688ee06c51
+            echo "Não consegui gerar o relatório.";
             die();
         }
         $meses = array(
@@ -64,11 +59,7 @@
     <table>
         <thead>
             <tr>
-<<<<<<< HEAD
-                <th colspan="9">Relatório de faltas - <?php echo "$meses[$mes] de $ano"?></th>
-=======
                 <th colspan="9">Relatorio de faltas - <?php if(empty($_POST['mes'])){ echo "$meses[$mes] de $ano"; } else { echo "Indefinido"; }?></th>
->>>>>>> 1c25d49247ac6653f7383538e7a991688ee06c51
             </tr>
         </thead>
         <tr>
