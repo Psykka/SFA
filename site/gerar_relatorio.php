@@ -59,7 +59,7 @@
         <div class="cadastro">
             <form id="form" action="relatorio.php" method="post">
                 <strong>Mês/Ano:&nbsp</strong><input type="month" name="mes">
-                <input type="submit" value="checar">
+                <input type="submit" value="Checar">
             </form>
         </div>
     </div>

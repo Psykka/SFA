@@ -28,7 +28,7 @@
         $cms = new CMS();
         $db = $cms->conectar();
         
-        if(!isset($_POST['mes'])){
+        if(empty($_POST['mes'])){
             echo "Não consegui gerar o relatorio.";
             die();
         }
@@ -59,7 +59,7 @@
     <table>
         <thead>
             <tr>
-                <th colspan="9">Relatorio de faltas - <?php echo "$meses[$mes] de $ano"?></th>
+                <th colspan="9">Relatorio de faltas - <?php if(empty($_POST['mes'])){ echo "$meses[$mes] de $ano"; } else { echo "Indefinido"; }?></th>
             </tr>
         </thead>
         <tr>
