@@ -151,7 +151,10 @@
                     type: 'success',
                     title: 'Falta marcada com sucesso!',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1500,
+                    onClose: () =>{
+                        window.location.reload();
+                    }
                 })
             } else {
                 if (result.value == 0 || result.dismiss === Swal.DismissReason.cancel) 
