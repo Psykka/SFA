@@ -3,7 +3,7 @@ function rowSearch(funcionarios, inputId, divId){
         query = funcionarios.map(({nome, idFunc, rg}) => ({nome, rg, id: idFunc })).filter(({nome}) => nome.toLowerCase().includes(input));
 
     let result = '';
-    let list = ''!
+    let list = '';
 
     if(!query[0]) return document.getElementById(divId).innerHTML = "Não consegui encontrar";
 
