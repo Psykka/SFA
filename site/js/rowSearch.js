@@ -1,11 +1,11 @@
 function rowSearch(funcionarios, inputId, divId){
-    let input = document.getElementById(inputId).value.toLowerCase(),
-        query = funcionarios.map(({nome, idFunc, rg}) => ({nome, rg, id: f.idFunc })).filter(({nome}) => nome.toLowerCase().includes(input));
+    const input = document.getElementById(inputId).value.toLowerCase(),
+        query = funcionarios.map(({nome, idFunc, rg}) => ({nome, rg, id: idFunc })).filter(({nome}) => nome.toLowerCase().includes(input));
 
     let result = '';
+    let list = ''!
 
-    if(!query[0]) return "Não consegui encontrar";
-    let list = ''
+    if(!query[0]) return document.getElementById(divId).innerHTML = "Não consegui encontrar";
 
     query.forEach(funcionario => {
         list = list + `<tr>
