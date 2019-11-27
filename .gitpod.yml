@@ -1,19 +1,18 @@
 image:
-  file: Dockerfile
+  file: .gitpod.dockerfile
+  context: apache
 ports:
   - port: 8001
     onOpen: ignore
   - port: 3306
     onOpen: ignore
 tasks:
-  - init: composer install
-    command: echo "Hallo"
   - name: MySQL
     command: >
-        mysqld
-        mysql source *.sql
+        mysql
+        source sfa-1.5.1.sql
   - name: Apache
     command: >
-        apachectl start;
-        multitail /var/log/apache2/error.log -I /var/log/apache2/access.log
+        apachectl start &&
+        multitail /var/log/apache2/access.log -I /var/log/apache2/error.log
   - before: cd site/
