@@ -9,7 +9,6 @@ ports:
 tasks:
   - name: MySQL
     command: >
-        mysql
         source sfa-1.5.1.sql
   - name: Apache
     command: >
