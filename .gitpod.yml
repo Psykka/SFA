@@ -3,7 +3,7 @@ image:
   context: apache
 ports:
   - port: 8080
-    onOpen: ignore
+    onOpen: open-preview
   - port: 3306
     onOpen: ignore
 tasks:
