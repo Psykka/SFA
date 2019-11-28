@@ -1,6 +1,6 @@
 <?php
     class CMS {
-        var $host = "192.168.1.103", $user = "monty", $pass = "123", $db = "SFA";
+        var $host = "localhost", $user = "root", $pass = "", $db = "SFA";
 
         public function conectar(){
             $conexao = mysqli_connect($this->host, $this->user, $this->pass, $this->db);
