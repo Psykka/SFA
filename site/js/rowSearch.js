@@ -1,32 +1,35 @@
-function rowSearch(funcionarios, inputId, divId){
+function rowSearch(funcionarios, inputId, divId) {
     let input = document.getElementById(inputId).value.toLowerCase(),
-        query = funcionarios.map( f =>{ return {nome: f.nome, id: f.idFunc, rg: f.rg} }).filter( n =>{ return n.nome.toLowerCase().includes(input) })
+        query = funcionarios.map(f => { return { nome: f.nome, id: f.idFunc, rg: f.rg } }).filter(n => { return n.nome.toLowerCase().includes(input) })
 
-    let result = ""
+    let result = "";
 
-    if(!query[0]){
+    if (!query[0]) {
         result = "Não consegui encontrar";
 
-    }else{
-        let list = ""
+    } else {
+        let list = "";
 
-        query.forEach(funcionario => {
+
+        for(i = 0; i <= 4; i++) {
+            if(query[i]){
             list = list + `<tr>
-                                <td>${ funcionario.id }</td>
-                                <td>${ funcionario.nome }</td>
+                                <td>${ query[i].id }</td>
+                                <td>${ query[i].nome }</td>
                                 <td>
-                                    <a href="funcionarios.php?funcId=${ funcionario.id }">
+                                    <a href="funcionarios.php?funcId=${ query[i].id}">
                                         <img src="./assets/edit.png">
                                     </a>
-                                    <a href="funcionarios.php?deleteId=${ funcionario.id }">
+                                    <a href="funcionarios.php?deleteId=${ query[i].id}">
                                     <img src="./assets/delete.png">
                                     </a>
                                 </td>
                             </tr>`;
-        });
+            }
+        }
 
-        result = `<table>${ list }</table>`
-        
+        result = `<table>${list}</table>`;
+
     }
 
     return document.getElementById(divId).innerHTML = result;

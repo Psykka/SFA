@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
     <title>Relatorio</title>
     <style>
         table, th, td {
             border: 1px solid black;
+            text-align: center;
+        }
+        thead {
+            text-align: center;
+        }
+        thead img {
+            height: 50px;
         }
         button {
             margin-top: 20px;
         }
-        a, img {
+        button img {
             margin: 3px;
             height: 30px;
             vertical-align: middle;
+        }
+        button a {
+            color: black;
+            text-decoration: none;
+        }
+        .right{
+            float: right;
+        }
+        .left {
+            float: left;
         }
 
     </style>
@@ -39,25 +56,15 @@
             return "$ano-$mes-$dia";
         }
 
+        function formatDateRelatorio($data){
+            list($ano, $mes, $dia) = explode('-', $data);
+            return "$dia/$mes/$ano";
+        }
+
         list($_datainicio, $_datafim) = explode(' - ', $_POST['mes']);
 
         $datainicio = formatDate($_datainicio);
-        $datafim = formatDate($_datafim);   
-
-        $meses = array(
-            1 => 'Janeiro',
-            'Fevereiro',
-            'Março',
-            'Abril',
-            'Maio',
-            'Junho',
-            'Julho',
-            'Agosto',
-            'Setembro',
-            'Outubro',
-            'Novembro',
-            'Dezembro'
-        );
+        $datafim = formatDate($_datafim);
 
         $query = "SELECT falt.idFalta, func.nome, falt.dia, m.motivo, falt.atrasoMinutos, falt.quantidadeAulas, falt.quantidadeHaes, falt.justificativa, falt.visto FROM faltas AS falt INNER JOIN funcionario AS func INNER JOIN motivo AS m ON falt.idFunc = func.idfunc AND falt.idMotivo = m.idMotivo WHERE dia BETWEEN '$datainicio' AND '$datafim'";
 
@@ -68,7 +75,10 @@
     <table>
         <thead>
             <tr>
-                <th colspan="9">Relatorio de faltas [<?php if(!empty($_POST['mes'])){ echo $_POST['mes']; } else { echo "Indefinido"; }?>]</th>
+                <th colspan="9" class="img-table"><div><img class="left" src="assets/Logo1.png"><img class="right" src="assets/EtecLogo.jpg"></div></th>
+            </tr>
+            <tr>
+                <th colspan="9">Relatorio de faltas [ <?php if(!empty($_POST['mes'])){ echo $_POST['mes']; } else { echo "Indefinido"; }?> ]</th>
             </tr>
         </thead>
         <tr>
@@ -90,6 +100,7 @@
                         if($i == 8 && $row[$i] == 1) $row[$i] = 'Não Efetivado';
                         if($i == 8 && $row[$i] == 0) $row[$i] = 'Sem Justificativa';
                         if($i == 8 && $row[$i] == 2) $row[$i] = 'Efetivado';
+                        if($i == 2) $row[$i] = formatDateRelatorio($row[$i]);
                         echo "<td>$row[$i]</td>";
                     }
                     echo "</tr>";
@@ -98,6 +109,7 @@
 
     </table>
     <button><a href="javascript:window.print()">Imprimir<img src="./assets/impressora.png"></a></button>
+    <button><img src="./assets/back2.png"><a href="gerar_relatorio.php">Voltar ao sistema</a></button>
 </body>
 
 </html>

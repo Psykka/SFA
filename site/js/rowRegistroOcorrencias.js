@@ -1,7 +1,7 @@
 function rowSearch(faltas, divId){
         query = faltas.map( f =>{ return {id: f.idFalta, nome: f.nome, motivo: f.motivo, dia: f.dia, visto: f.visto} })
 
-    let result = ""
+    let result = "";
 
     if(!query[0]){
         result = "Não há faltas";
@@ -9,17 +9,18 @@ function rowSearch(faltas, divId){
     }else{
         let list = ""
 
-        query.forEach(falta => {   
-
+        for(i = 0; i <= 4; i++) {
+            if(query[i]){
             list = list + `<tr>
-                                <td>${ falta.id } - </td>
+                                <td>${ query[i].id } - </td>
                                 <td>
                                     <td>
-                                        <a href="registro_ocorrencias.php?idFalta=${ falta.id }">${ falta.nome }</a> - ${falta.motivo} | ${ formatData(falta.dia) }
+                                        <a href="registro_ocorrencias.php?idFalta=${ query[i].id }">${ query[i].nome }</a> - ${query[i].motivo} | ${ formatData(query[i].dia) }
                                     </td>
                                 </td>
                             </tr>`;
-        });
+            };
+        };
 
         result = `<table>${ list }</table>`
         

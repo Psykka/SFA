@@ -10,16 +10,18 @@ function rowSearch(funcionarios, inputId, divId){
     }else{
         let list = ""
 
-        query.forEach(funcionario => {
+        for(i = 0; i <= 4; i++) {
+            if(query[i]){
             list = list + `<tr>
-                                <td>${ funcionario.id }</td>
+                                <td>${ query[i].id }</td>
                                 <td>
                                     <td>
-                                        <a href="faltas.php?funcId=${ funcionario.id }">${ funcionario.nome }</a>
+                                        <a href="faltas.php?funcId=${ query[i].id }">${ query[i].nome }</a>
                                     </td>
                                 </td>
                             </tr>`;
-        });
+            }
+        }
 
         result = `<table>${ list }</table>`
         

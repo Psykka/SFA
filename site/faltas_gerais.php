@@ -12,6 +12,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <style>
+    @media (max-width: 767px) {
+    }
+    </style>
     <title>SFA | Faltas Gerais</title>
 </head>
 
@@ -45,6 +49,11 @@
             header("Location: index.php");
             die();
         }
+
+        function formatDate($data){
+            list($ano, $mes, $dia) = explode('-', $data);
+            return "$dia/$mes/$ano";
+        }
     ?>
 
     <header class="d-flex justify-content-between">
@@ -65,10 +74,10 @@
         <div class="cadastro">
             <h1>Faltas Gerais</h1>
             <form action="#" method="post">
-                <input type="month" name="mes" id="mes">
+                <strong>Buscar mês&nbsp</strong><input type="month" name="mes" id="mes">
                 <input type="submit" value="Ver mês">
             </form>
-            <table class="table">
+            <table class="table table-responsive">
                 <?php
                     if($result->num_rows == 0){
                         echo "Não há nada aqui...";
@@ -84,12 +93,13 @@
                             for($i = 0; $i <= 8; $i++){
                                 $id = $row[0];
                                 if($i == 8 && $row[$i] == 1){
-                                    $row[$i] = "<button type='button' class='btn btn-success' onClick='vistar($id)'>Vistar</button>";
+                                    $row[$i] = "<button type='button' class='btn btn-danger' onClick='vistar($id)'>Não Efetivado</button>";
                                 }else if($i == 8 && $row[$i] == 2){
-                                    $row[$i] = "<button type='button' class='btn btn-secondary' disabled>Vistado</button>";
+                                    $row[$i] = "<button type='button' class='btn btn-success' disabled>Efetivado</button>";
                                 }else if($i == 8 && $row[$i] == 0){
-                                    $row[$i] = "<button type='button' class='btn btn-secondary btn-sm' disabled>Não Marcada</button>";
+                                    $row[$i] = "<button type='button' class='btn btn-primary btn-sm' disabled>Sem Justificativa</button>";
                                 }
+                                if($i == 2) $row[$i] = formatDate($row[$i]);
                                 echo "<td>$row[$i]</td>";
                             }
                             echo "</tr>";
@@ -102,7 +112,7 @@
         <script type="text/javascript">
             async function vistar(idFalta){
                 await Swal.fire({
-                    title: 'Deseja vistar?',
+                    title: 'Deseja continuar?',
                     type: 'question',
                     showCancelButton: true,
                     focusConfirm: true,
