@@ -97,9 +97,13 @@
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     for($i = 0; $i <= 8; $i++){
-                        if($i == 8 && $row[$i] == 1) $row[$i] = 'Não Efetivado';
-                        if($i == 8 && $row[$i] == 0) $row[$i] = 'Sem Justificativa';
-                        if($i == 8 && $row[$i] == 2) $row[$i] = 'Efetivado';
+                        if($i == 8 && $row[$i] == 1){
+                            $row[$i] = 'Não Deferido';
+                        } else if($i == 8 && $row[$i] == 0){
+                            $row[$i] = 'Sem Justificativa';
+                        } else if($i == 8 && $row[$i] == 2){
+                            $row[$i] = 'Deferido';
+                        }
                         if($i == 2) $row[$i] = formatDateRelatorio($row[$i]);
                         echo "<td>$row[$i]</td>";
                     }

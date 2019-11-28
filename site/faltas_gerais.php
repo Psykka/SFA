@@ -93,9 +93,9 @@
                             for($i = 0; $i <= 8; $i++){
                                 $id = $row[0];
                                 if($i == 8 && $row[$i] == 1){
-                                    $row[$i] = "<button type='button' class='btn btn-danger' onClick='vistar($id)'>Não Efetivado</button>";
+                                    $row[$i] = "<button type='button' class='btn btn-danger' onClick='vistar($id)'>Não Deferido</button>";
                                 }else if($i == 8 && $row[$i] == 2){
-                                    $row[$i] = "<button type='button' class='btn btn-success' disabled>Efetivado</button>";
+                                    $row[$i] = "<button type='button' class='btn btn-success' disabled>Deferido</button>";
                                 }else if($i == 8 && $row[$i] == 0){
                                     $row[$i] = "<button type='button' class='btn btn-primary btn-sm' disabled>Sem Justificativa</button>";
                                 }
