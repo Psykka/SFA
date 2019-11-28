@@ -32,6 +32,18 @@
             echo "Não consegui gerar o relatório.";
             die();
         }
+
+        function formatDate($data){
+            list($dia, $mes, $_ano) = explode('/', $data);
+            list($ano) = explode(' ', $_ano);
+            return "$ano-$mes-$dia";
+        }
+
+        list($_datainicio, $_datafim) = explode(' - ', $_POST['mes']);
+
+        $datainicio = formatDate($_datainicio);
+        $datafim = formatDate($_datafim);   
+
         $meses = array(
             1 => 'Janeiro',
             'Fevereiro',
@@ -47,10 +59,7 @@
             'Dezembro'
         );
 
-        $mes = intval(substr($_POST['mes'], 5));
-        $ano = substr($_POST['mes'], 0, 4);
-
-        $query = "select falt.idFalta, func.nome, falt.dia, m.motivo, falt.atrasoMinutos, falt.quantidadeAulas, falt.quantidadeHaes, falt.justificativa, falt.visto from faltas as falt inner join funcionario as func inner join motivo as m on falt.idFunc = func.idfunc and falt.idMotivo = m.idMotivo where MONTH(dia) = $mes and YEAR(dia) = $ano;";
+        $query = "SELECT falt.idFalta, func.nome, falt.dia, m.motivo, falt.atrasoMinutos, falt.quantidadeAulas, falt.quantidadeHaes, falt.justificativa, falt.visto FROM faltas AS falt INNER JOIN funcionario AS func INNER JOIN motivo AS m ON falt.idFunc = func.idfunc AND falt.idMotivo = m.idMotivo WHERE dia BETWEEN '$datainicio' AND '$datafim'";
 
         $result = mysqli_query($db, $query);
     ?>
@@ -59,7 +68,7 @@
     <table>
         <thead>
             <tr>
-                <th colspan="9">Relatorio de faltas - <?php if(!empty($_POST['mes'])){ echo "$meses[$mes] de $ano"; } else { echo "Indefinido"; }?></th>
+                <th colspan="9">Relatorio de faltas [<?php if(!empty($_POST['mes'])){ echo $_POST['mes']; } else { echo "Indefinido"; }?>]</th>
             </tr>
         </thead>
         <tr>
@@ -73,11 +82,14 @@
             <th>Justificativa</th>
             <th>Visto</th>
         </tr>
-
-        <?php
+            <?php
+                // print_r(mysqli_fetch_array($result));
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     for($i = 0; $i <= 8; $i++){
+                        if($i == 8 && $row[$i] == 1) $row[$i] = 'Não Efetivado';
+                        if($i == 8 && $row[$i] == 0) $row[$i] = 'Sem Justificativa';
+                        if($i == 8 && $row[$i] == 2) $row[$i] = 'Efetivado';
                         echo "<td>$row[$i]</td>";
                     }
                     echo "</tr>";

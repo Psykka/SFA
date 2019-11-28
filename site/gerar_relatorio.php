@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/Logo2.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script type="text/javascript">
-    $(document).ready(() => {
-        $('#RG').mask('00.000.000-0')
-    })
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <title>SFA | Cadastro</title>
 </head>
 
@@ -58,10 +56,43 @@
     <div class="container">
         <div class="cadastro">
             <form id="form" action="relatorio.php" method="post">
-                <strong>Mês/Ano:&nbsp</strong><input type="month" name="mes">
+                <strong>Mês/Ano</strong><input type="text" name="mes">
                 <input type="submit" value="Checar">
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        $('input[name="mes"]').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY',
+                separator: ' - ',
+                applyLabel: 'Aplicar',
+                cancelLabel: 'Cancelar',
+                daysOfWeek: [
+                    'Dom',
+                    'Seg',
+                    'Ter',
+                    'Qua',
+                    'Qui',
+                    'Sex',
+                    'Sab'
+                ],
+                monthNames: [
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Agosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                ]
+            }
+        });
+    </script>
 </body>
 </html>
