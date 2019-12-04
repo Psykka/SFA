@@ -9,7 +9,7 @@ function rowSearch(faltas, divId){
     }else{
         let list = ""
 
-        for(i = 0; i <= 4; i++) {
+        for(i = 0; i <= query.length; i++) {
             if(query[i]){
             list = list + `<tr>
                                 <td>${ query[i].id } - </td>
